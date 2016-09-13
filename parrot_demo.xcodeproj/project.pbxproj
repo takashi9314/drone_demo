@@ -49,6 +49,7 @@
 		C73845DC1D88033800EB3328 /* parrot_demoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = parrot_demoUITests.swift; sourceTree = "<group>"; };
 		C73845DE1D88033800EB3328 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C7D4EFEC1D88083600021B0E /* ARSDK3_iOS_3_9_2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ARSDK3_iOS_3_9_2; sourceTree = "<group>"; };
+		C7D4EFEE1D880CDF00021B0E /* parrot_demo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "parrot_demo-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +107,7 @@
 				C73845C31D88033700EB3328 /* Assets.xcassets */,
 				C73845C51D88033700EB3328 /* LaunchScreen.storyboard */,
 				C73845C81D88033700EB3328 /* Info.plist */,
+				C7D4EFEE1D880CDF00021B0E /* parrot_demo-Bridging-Header.h */,
 			);
 			path = parrot_demo;
 			sourceTree = "<group>";
@@ -404,11 +406,38 @@
 		C73845E21D88033800EB3328 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphoneos/staging/usr/include";
+				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphonesimulator/staging/usr/include";
 				INFOPLIST_FILE = parrot_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphoneos/staging/usr/lib";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphonesimulator/staging/usr/lib";
+				OTHER_LDFLAGS = (
+					"-larcommands",
+					"-larcontroller",
+					"-lardiscovery",
+					"-larnetwork",
+					"-larnetworkal",
+					"-larsal",
+					"-larstream",
+					"-larstream2",
+					"-larmavlink",
+					"-ljson",
+					"-larmedia",
+					"-larutils",
+					"-lcurl",
+					"-lardatatransfer",
+					"-lcrypto",
+					"-lssl",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tk.parrot-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "parrot_demo/parrot_demo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -416,12 +445,38 @@
 		C73845E31D88033800EB3328 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "";
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = "";
+				"HEADER_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphoneos/staging/usr/include";
+				"HEADER_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphonesimulator/staging/usr/include";
 				INFOPLIST_FILE = parrot_demo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				"LIBRARY_SEARCH_PATHS[sdk=iphoneos*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphoneos/staging/usr/lib";
+				"LIBRARY_SEARCH_PATHS[sdk=iphonesimulator*]" = "$(PROJECT_DIR)/ARSDK3_iOS_3_9_2/iOS-iphonesimulator/staging/usr/lib";
+				OTHER_LDFLAGS = (
+					"-larcommands",
+					"-larcontroller",
+					"-lardiscovery",
+					"-larnetwork",
+					"-larnetworkal",
+					"-larsal",
+					"-larstream",
+					"-larstream2",
+					"-larmavlink",
+					"-ljson",
+					"-larmedia",
+					"-larutils",
+					"-lcurl",
+					"-lardatatransfer",
+					"-lcrypto",
+					"-lssl",
+					"-lz",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "tk.parrot-demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "parrot_demo/parrot_demo-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
